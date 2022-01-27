@@ -55,7 +55,7 @@
 
       widthContainer.textContent = `${window.screen.width}px`;
       heightContainer.textContent = `${window.screen.height}px`;
-      orientationContainer.textContent = window.screen.orientation.type;
+      orientationContainer.textContent = window.screen.orientation.type.split('-')[0];
       pixelContainer.textContent = window.devicePixelRatio;
     })();
   </script>

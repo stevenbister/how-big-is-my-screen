@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>How big is my screen?</title>
+
+  <meta name="description" content="Page description">
+
+  <link rel="canonical" href="/">
+
+  <meta name="theme-color" content="#000">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+</head>
+<body>
+  <main class="container">
+    <h1>How big is my screen?</h1>
+
+    <div class="grid">
+      <div class="col">
+        <h2>Width</h2>
+        <span class="number" data-width></span>
+      </div>
+
+      <div class="col">
+        <h2>Height</h2>
+        <span class="number" data-height></span>
+      </div>
+
+      <div class="col">
+        <h2>Orientation</h2>
+        <span data-orientation></span>
+      </div>
+
+      <div class="col">
+        <h2>Pixel density</h2>
+        <span data-pixel></span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      const widthContainer = document.querySelector('[data-width]');
+      const heightContainer = document.querySelector('[data-height]');
+      const orientationContainer = document.querySelector('[data-orientation]');
+      const pixelContainer = document.querySelector('[data-pixel]');
+
+      widthContainer.textContent = `${window.screen.width}px`;
+      heightContainer.textContent = `${window.screen.height}px`;
+      orientationContainer.textContent = window.screen.orientation.type;
+      pixelContainer.textContent = window.devicePixelRatio;
+    })();
+  </script>
+</body>
+</html>
